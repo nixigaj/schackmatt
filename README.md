@@ -1,4 +1,4 @@
-<img align="left" alt="" src="icon.svg" height="128" />
+<img align="left" alt="" src="icon.png" height="128" />
 
 # Schackmatt
 
