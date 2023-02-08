@@ -1,4 +1,4 @@
-<img align="left" alt="" src="icon.svg" height="128" />
+<img align="left" alt="" src="https://raw.githubusercontent.com/nixigaj/schackmatt/eb3dd466ff635084042b9d8096b316f5e5d2fbc3/icon.svg" height="128" />
 
 # Schackmatt
 
