@@ -4,8 +4,6 @@
 
 A web based chess game.
 
-🚧 Under construction.
-
 ## Cloning this repository
 
 ```
