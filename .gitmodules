@@ -1,6 +1,0 @@
-[submodule "schackmatt-client"]
-	path = schackmatt-client
-	url = https://github.com/nixigaj/schackmatt-client.git
-[submodule "schackmatt-server"]
-	path = schackmatt-server
-	url = https://github.com/nixigaj/schackmatt-server.git

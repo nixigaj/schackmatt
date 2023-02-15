@@ -1,0 +1,5 @@
+# Compiled JavaScript
+*.js
+
+# Build directory
+build/
