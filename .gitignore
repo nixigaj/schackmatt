@@ -2,4 +2,7 @@
 *.js
 
 # Build directory
-build/
+/build
+
+# Node modules
+/node_modules
