@@ -1,17 +1,17 @@
-import * as express from 'express';
+import express, { Request, Response, Express } from 'express';
+//import http from 'http';
 
-const app = express();
+const app: Express = express();
 app.use(express.static('public'));
-import * as http from 'http';
-const server = http.createServer(app);
-const port = process.env.PORT || 3000;
+const port: number | string = process.env.PORT || 3000;
 
-app.get('/', (req: Request<P, ResBody, ReqBody, ReqQuery, LocalsObj>, res: Response<ResBody, LocalsObj>) => {
+app.get('/', (req: Request, res: Response) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-server.listen(port, () => {
-    console.log('listening on port: ' + port);
+//http.createServer(app).listen(port, () => {
+app.listen(port, () => {
+    console.log(`listening on port: ${port}`);
 });
 
 
