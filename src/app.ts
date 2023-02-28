@@ -6,7 +6,7 @@ app.use(express.static('public'));
 const port: number | string = process.env.PORT || 3000;
 
 app.get('/', (req: Request, res: Response) => {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/dist/index.html');
 });
 
 http.createServer(app).listen(port, () => {
