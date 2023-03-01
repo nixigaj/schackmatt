@@ -6,6 +6,14 @@
     <style>
          body {
 
+             font-size: 2em;
+             font-weight: bold;
+             color: white;
+             background-color: black;
+             padding: 10px;
+             border-radius: 10px;
+
+
          }
 
     </style>
@@ -17,12 +25,27 @@
 <body>
 
 <div id="board1" style="width: 400px"></div>
+<div class="timer">00:00</div>
+
 <button id="startBtn">Start Position</button>
 <button id="clearBtn">Clear Board</button>
 
 <script src="lib/chessboard-1.0.0.min.js"></script>
 <script src="lib/chess.min.js"></script>
 <script src="lib/jquery-3.6.3.js"></script>
+
+
+<script>
+    let timeLeft = 180;
+    setInterval(function() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        let formattedTime = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+    }, 1000);
+
+
+
+</script>
 
 </body>
 
