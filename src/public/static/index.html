@@ -106,14 +106,13 @@
             background-color: #FFFFFF;
         }
 
-        footer p {
-
-             text-align: right;
-             color: black;
-
-
-         }
-
+        footer p{
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+            left: 0;
+            text-align: center;
+        }
 
     </style>
 
@@ -121,6 +120,13 @@
 
 
 <body>
+
+<footer>
+
+    <p>Press spacebar after a move to switch player's clock</p>
+
+</footer>
+
 
 <div id="board1" style="width: 200px"></div>
 <div id="timer-container">
@@ -135,12 +141,7 @@
 <button id="startBtn">Start Position</button>
 <button id="clearBtn">Clear Board</button>
 <button id="timer_start_Btn">START GAME</button>
-
-<footer>
-
-    <p>Press spacebar after a move to switch player's clock</p>
-
-</footer>
+<button id="resignBtn">RESGIN</button>
 
 
 <script src="./lib/chessboard-1.0.0.min.js"></script>
@@ -148,22 +149,6 @@
 <script src="lib/jquery-3.6.3.js"></script>
 
 <script>
-
-    const board1 = Chessboard("board1", {
-        draggable: true,
-        dropOffBoard: "trash",
-        sparePieces: true
-    });
-
-    document.getElementById('startBtn').addEventListener("click", function() {
-        board.position("start");
-
-    },)
-
-
-        $('#clearBtn').on('click', board1.clear);
-
-
 
         let playing = true;
         let currentPlayer = 1;
@@ -223,6 +208,12 @@
 
                 }
 
+                document.getElementById("resignBtn").addEventListener("click", function () {
+                    clearInterval(timer2);
+                    alert("LOST THE GAME\n You resigned the game")
+                });
+
+
 
             }, 1000);
         },)
@@ -232,6 +223,10 @@
                 Playerswap();
             }
         });
+
+
+
+
 
 
 </script>
