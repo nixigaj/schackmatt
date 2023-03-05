@@ -5,11 +5,27 @@
     <link rel="stylesheet" href="lib/chessboard-1.0.0.min.css" />
     <style>
 
+
         body {
 
         }
 
-            #timer-container {
+        #startBtn {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 75px;
+        }
+
+        #clearBtn{
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 0;
+        }
+
+
+        #timer-container {
 
                 margin-left: auto;
                 margin-top: 20%;
@@ -62,6 +78,7 @@
                 font-weight: bold;
                 color: #000000;
 
+
             }
 
             #timer_start_Btn {
@@ -94,7 +111,9 @@
              text-align: right;
              color: black;
 
+
          }
+
 
     </style>
 
@@ -129,36 +148,94 @@
 <script src="lib/jquery-3.6.3.js"></script>
 
 
-
 <script>
 
+const board2 = Chessboard('board2', {
+    draggable: true,
+    dropOffBoard: 'trash',
+    sparePieces: true
+});
 
-    let starttime= 180;
-    let timer= null;
+$('#startBtn').on('click', board2.start);
+$('#clearBtn').on('click', board2.clear);
 
+
+let playing = true;
+let currentPlayer = 1;
+
+let starttime= 180;
+let starttime1= 180;
+
+function Playerswap() {
+    if (playing) {
+        return currentPlayer = currentPlayer === 1 ? 2 : 1;
+    }
+}
 
     document.getElementById("timer_start_Btn").addEventListener("click", function() {
         document.getElementById("timer_start_Btn").style.display = "none";
-        let timer1 = setInterval(function () {
+
+
+
+        let timer2 = setInterval(function () {
             let minutes = Math.floor(starttime / 60);
             let seconds = starttime % 60;
             let clocktime = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
 
-            if (starttime <= 30) {
-                document.getElementById("button1").style.color = "#CC0000";
+            let minutes1 = Math.floor(starttime1 / 60);
+            let seconds1 = starttime1 % 60;
+            let clocktime1 = (minutes1 < 10 ? "0" + minutes1 : minutes1) + ":" + (seconds1 < 10 ? "0" + seconds1 : seconds1);
+
+
+
+            if (currentPlayer === 1) {
+                document.getElementById("timer1").innerHTML = clocktime;
+                starttime = starttime - 1;
+
+                if (starttime <= 30) {
+                   document.getElementById("timer1").style.color = "#CC0000";
+                }
+                if (starttime <= 0) {
+                    clearInterval(timer2);
+                    alert("LOST THE GAME\n You lost on time");
+
+
+
             }
 
-            if (starttime <= 0) {
-                clearInterval(timer1);
-                alert("LOST THE GAME\n You lost on time");
+        }
+
+            if (currentPlayer === 2) {
+                document.getElementById("timer").innerHTML = clocktime1;
+                starttime1 = starttime1 - 1;
+
+                if (starttime <= 30) {
+                    document.getElementById("timer").style.color = "#CC0000";
+                }
+                if (starttime <= 0) {
+                    clearInterval(timer2);
+                    alert("LOST THE GAME\n You lost on time");
+
+
+
+                }
 
             }
 
-            document.getElementById("timer1").innerHTML = clocktime;
 
-            starttime = starttime - 1;
+
+
+
         }, 1000);
     },)
+
+document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+        Playerswap();
+    }
+});
+
+
 </script>
 
 </body>
