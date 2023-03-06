@@ -11,17 +11,79 @@
         }
 
         #startBtn {
-            display: flex;
-            position: absolute;
-            top: 20px;
-            right: 75px;
+            margin-left: auto;
+            width: 100%;
+            display: block;
+            color: #020202;
+            min-height: 50px;
+            max-width: 200px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            letter-spacing: 2px;
+
+            border: 1px solid #000000;
         }
 
-        #clearBtn{
-            display: flex;
-            position: absolute;
-            top: 20px;
-            right: 0;
+        #startBtn {
+            color: #ffffff;
+            background-color: #0071D5;
+        }
+
+        #startBtn:hover {
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+
+        #clearBtn {
+            margin-left: auto;
+            width: 100%;
+            display: block;
+            color: #020202;
+            min-height: 50px;
+            max-width: 200px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            letter-spacing: 2px;
+
+            border: 1px solid #000000;
+
+        }
+
+        #clearBtn {
+            color: #ffffff;
+            background-color: #0071D5;
+        }
+
+        #clearBtn:hover {
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+
+        #resignBtn {
+            margin-left: auto;
+            width: 100%;
+            display: block;
+            color: #020202;
+            min-height: 50px;
+            max-width: 200px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            letter-spacing: 2px;
+
+            border: 1px solid #000000;
+        }
+
+        #resignBtn {
+            color: #ffffff;
+            background-color: #0071D5;
+        }
+
+        #resignBtn:hover {
+            color: #000000;
+            background-color: #FFFFFF;
         }
 
 
@@ -114,6 +176,7 @@
             text-align: center;
         }
 
+
     </style>
 
 </head>
@@ -127,7 +190,6 @@
 
 </footer>
 
-
 <div id="board1" style="width: 200px"></div>
 <div id="timer-container">
     <div id="timer">03:00</div>
@@ -137,16 +199,16 @@
     <div id="timer1">03:00</div>
 </div>
 
-
-<button id="startBtn">Start Position</button>
-<button id="clearBtn">Clear Board</button>
 <button id="timer_start_Btn">START GAME</button>
-<button id="resignBtn">RESGIN</button>
+<button id="resignBtn">RESIGN</button>
+<button id="startBtn">START POSITION</button>
+<button id="clearBtn">CLEAR BOARD</button>
 
 
-<script src="./lib/chessboard-1.0.0.min.js"></script>
+<script src="lib/chessboard-1.0.0.min.js"></script>
 <script src="lib/chess.min.js"></script>
 <script src="lib/jquery-3.6.3.js"></script>
+
 
 <script>
 
