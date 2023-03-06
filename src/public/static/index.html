@@ -3,6 +3,8 @@
 <head>
     <title>Schackmatt - The Game</title>
     <link rel="stylesheet" href="lib/chessboard-1.0.0.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+
     <style>
 
 
@@ -199,6 +201,13 @@
     <div id="timer1">03:00</div>
 </div>
 
+
+<div id="confirm_Btn" title="Resign?">
+</div>
+
+<div id="dialog-confirm" title="Are you sure you want to resign?">
+
+
 <button id="timer_start_Btn">START GAME</button>
 <button id="resignBtn">RESIGN</button>
 <button id="startBtn">START POSITION</button>
@@ -207,10 +216,11 @@
 
 <script src="lib/chessboard-1.0.0.min.js"></script>
 <script src="lib/chess.min.js"></script>
-<script src="lib/jquery-3.6.3.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 
 <script>
+
 
         let playing = true;
         let currentPlayer = 1;
@@ -272,9 +282,7 @@
 
                 document.getElementById("resignBtn").addEventListener("click", function () {
                     clearInterval(timer2);
-                    alert("LOST THE GAME\n You resigned the game")
                 });
-
 
 
             }, 1000);
@@ -286,10 +294,35 @@
             }
         });
 
+        $( function() {
+            $(document).ready(function() {
+                $("#resignBtn").click(function() {
+                    $("#confirm_Btn").dialog({
+                        resizable: false,
+                        height: "auto",
+                        width: 400,
+                        modal: true,
+                        buttons: {
+                            "Cancel": function () {
+                                $(this).dialog("close");
+                            },
+                            "Resign": function () {
+                                $("#dialog-confirm").dialog({
+                                    resizable: false,
+                                    height: auto,
+                                    width: 300,
+                                    modal: true,
 
+                                });
+                                // Handle resign button click here
+                                $(this).dialog("close");
 
-
-
+                            }
+                        }
+                        })
+                    });
+                });
+            });
 
 </script>
 
