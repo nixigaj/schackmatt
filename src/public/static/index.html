@@ -203,10 +203,10 @@
 </div>
 
 
-<div id="confirm_Btn" title="Resign?">
+<div id="confirm_Btn" title="Resign?"><div id="myDialogText"></div>
 </div>
 
-<div id="dialog-confirm" title="Are you sure you want to resign?">
+<div id="dialog-confirm" title="You lost - you resigned the game">
 
 
 <button id="timer_start_Btn">START GAME</button>
@@ -304,6 +304,8 @@
             }
         });
 
+        $("#myDialogText").text("Are you sure you want to resign?");
+
         $( function() {
             $(document).ready(function() {
                 $("#resignBtn").click(function() {
@@ -317,18 +319,26 @@
                                 $(this).dialog("close");
                             },
                             "Resign": function () {
+                                $("#confirm_Btn").click(function(){
                                 $("#dialog-confirm").dialog({
                                     resizable: false,
                                     height: auto,
                                     width: 300,
                                     modal: true,
+                                    buttons: {
+                                        "Play again": function() {
+                                            $(this).dialog("close");
+                                        }
+                                    }
 
                                 });
                                 // Handle resign button click here
                                 $(this).dialog("close");
 
+                                });
+
                             }
-                        }
+                            }
                         })
                     });
                 });
