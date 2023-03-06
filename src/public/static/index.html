@@ -102,7 +102,7 @@
                 border-radius: 8px;
 
                 justify-content: center;
-                background-color: #FFFFFF;
+                background-color: #646464;
                 box-shadow: inset 3px 3px 0 #000,
                 inset -3px 3px 0 black,
                 inset -3px -3px 0 black,
@@ -121,13 +121,14 @@
             border-radius: 8px;
 
             justify-content: center;
-            background-color: #FFFFFF;
+            background-color: #646464;
             box-shadow: inset 3px 3px 0 #000,
             inset -3px 3px 0 black,
             inset -3px -3px 0 black,
             inset 3px -3px 0 black;
 
         }
+
 
             #timer {
 
@@ -228,9 +229,14 @@
         let starttime = 180;
         let starttime1 = 180;
 
+        let timer
+
+
+
         function Playerswap() {
             if (playing) {
                 return currentPlayer = currentPlayer === 1 ? 2 : 1;
+
             }
         }
 
@@ -250,6 +256,8 @@
 
                 if (currentPlayer === 1) {
                     document.getElementById("timer1").innerHTML = clocktime;
+                    document.getElementById("timer-container1").style.backgroundColor = "#ffffff";
+                    document.getElementById("timer-container").style.backgroundColor = "#646464";
                     starttime = starttime - 1;
 
                     if (starttime <= 30) {
@@ -266,6 +274,8 @@
 
                 if (currentPlayer === 2) {
                     document.getElementById("timer").innerHTML = clocktime1;
+                    document.getElementById("timer-container").style.backgroundColor = "#ffffff";
+                    document.getElementById("timer-container1").style.backgroundColor = "#646464";
                     starttime1 = starttime1 - 1;
 
                     if (starttime1 <= 30) {
