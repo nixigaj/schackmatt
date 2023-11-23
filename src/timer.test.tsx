@@ -1,5 +1,4 @@
-import ChessTimer, {Timer, Player} from './timer';
-import {useState} from "react";
+import {Timer, Player} from './timer';
 
 test('Start test', () => {
     const timer: Timer = new Timer({secAmount: 1}, () => {});

@@ -1,101 +1,96 @@
-
-
 #chessboard {
-    --variable-width: 80vh;
-    font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-    font-weight: 700;
-    width: var(--variable-width);
-    /*border: 1px solid black;*/
-    border-radius: 4px;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: calc(calc(var(--variable-width) / 2) * -1) 0 0 calc(calc(var(--variable-width) / 2) * -1);
-    box-sizing: border-box;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.4);
+  --variable-width: 80vh;
+  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-weight: 700;
+  width: var(--variable-width);
+  /*border: 1px solid black;*/
+  border-radius: 4px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(calc(var(--variable-width) / 2) * -1) 0 0 calc(calc(var(--variable-width) / 2) * -1);
+  box-sizing: border-box;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.4);
 }
 
 @media (max-aspect-ratio: 13/8) {
-    #chessboard {
-        --variable-width: 70vh;
-    }
+  #chessboard {
+    --variable-width: 70vh;
+  }
 }
 @media (max-aspect-ratio: 10/8) {
-    #chessboard {
-        --variable-width: 60vh;
-    }
+  #chessboard {
+    --variable-width: 60vh;
+  }
 }
 @media (max-aspect-ratio: 7/8) {
-    #chessboard {
-        --variable-width: 50vh;
-    }
+  #chessboard {
+    --variable-width: 50vh;
+  }
 }
 
 
 @media (max-aspect-ratio: 5/8) {
-    #chessboard {
-        --variable-width: 90vw;
-    }
+  #chessboard {
+    --variable-width: 90vw;
+  }
 }
 
 
 #timer1 {
-    position: absolute;
-    bottom: 20px;
+  position: absolute;
+  bottom: 20px;
 }
 
 #main-content {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #3b5245 url(./media/back-stripe.svg);
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #3b5245 url(./assets/back-stripe.svg);
+  overflow: hidden;
 }
 
 #headerbar {
-    color: black;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    /*box-shadow: 0 0 4px 0 rgba(0,0,0,0.4);*/
-    /*background: rgb(80,124,101);
-    background: linear-gradient(180deg, rgba(80,124,101,1) 0%, rgba(47,70,59,1) 100%);*/
-    background: #3b5245 url(./media/headerbar-stripe.svg);
-    box-sizing: border-box;
-    /*border-bottom: 1px solid black;*/
+  color: black;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  /*box-shadow: 0 0 4px 0 rgba(0,0,0,0.4);*/
+  /*background: rgb(80,124,101);
+  background: linear-gradient(180deg, rgba(80,124,101,1) 0%, rgba(47,70,59,1) 100%);*/
+  background: #3b5245 url(./assets/headerbar-stripe.svg);
+  box-sizing: border-box;
+  /*border-bottom: 1px solid black;*/
 }
 
 #logo-title {
-    font-size: 1.5em;
-    font-weight: 700;
+  font-size: 1.5em;
+  font-weight: 700;
 
 }
 #chess-pane {
-    width: 100%;
-    height: calc(100% - 50px);
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 20px;
-    /*background-color: blue;*/
-    /*border : 1px solid black;*/
-    font-size: 1.5em;
-    font-weight: 700;
-    color: white;
-
-
-
+  width: 100%;
+  height: calc(100% - 50px);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  /*background-color: blue;*/
+  /*border : 1px solid black;*/
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
 }
 
 body {
-    height: 90vh;
+  height: 90vh;
 }

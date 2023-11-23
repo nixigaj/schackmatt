@@ -27,7 +27,7 @@ export class Timer {
     activePlayer: Player = "p1" // The chessboard defaults to white turn on start
     timeEnd: TimeEndCallback
     finished: boolean = false;
-    test: number = 0; // DEBUG
+    //test: number = 0; // DEBUG
 
     constructor(props: TimerProps, timeend: TimeEndCallback) {
         this.p1timer = {
@@ -44,6 +44,7 @@ export class Timer {
         }
         this.timeEnd = timeend;
     }
+
     getElapsed(player: Player): number {
         if (player === "p1") {
             if (this.p1timer.active) {
@@ -79,7 +80,7 @@ export class Timer {
         const timeLeft = deadline - elapsed;
 
         if (!this.finished && timeLeft < 0) {
-            console.log("Time is up for " + player) // DEBUG
+            //console.log("Time is up for " + player) // DEBUG
             this.finished = true;
             this.timeEnd(player)
         }
@@ -102,7 +103,7 @@ export class Timer {
     }
 
     startPlayer(player: Player) {
-        console.log("startPlayer " + player + " called") // DEBUG
+        //console.log("startPlayer " + player + " called") // DEBUG
         if (player === "p1") {
             if (!this.p1timer.active) {
                 this.p1timer.active = true
@@ -116,8 +117,9 @@ export class Timer {
             }
         }
     }
+
     stopPlayer(player: Player) {
-        console.log("stopPlayer " + player + " called") // DEBUG
+        //console.log("stopPlayer " + player + " called") // DEBUG
         if (player === "p1") {
             if (this.p1timer.active) {
                 this.p1timer.active = false
@@ -133,11 +135,11 @@ export class Timer {
     }
 
     togglePlayer(): void {
-        console.log("togglePlayer called") // DEBUG
-        console.log("activePlayer before switch " + this.activePlayer) // DEBUG
+        //console.log("togglePlayer called") // DEBUG
+        //console.log("activePlayer before switch " + this.activePlayer) // DEBUG
         if (this.activePlayer === "p1") this.activePlayer = "p2"
         else this.activePlayer = "p1"
-        console.log("activePlayer is now " + this.activePlayer) // DEBUG
+        //console.log("activePlayer is now " + this.activePlayer) // DEBUG
 
         if (this.isActive()) {
             if (this.p1timer.active) {

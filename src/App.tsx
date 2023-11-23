@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import { Chess, Square, Move } from "chess.js";
 import { Chessboard } from "react-chessboard";
 import {Player, Timer} from "./timer"
@@ -44,7 +44,6 @@ function App() {
     }
 
     function onDrop(sourceSquare: Square, targetSquare: Square): boolean {
-
         if (makeAMove({ from: sourceSquare, to: targetSquare })) {
             //makeRandomMove(); // Uncomment to play against random bot
             afterDrop()
