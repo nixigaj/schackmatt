@@ -26,7 +26,7 @@ Build with `npm run build`. The resulting build is located inside the `./dist` d
 
 ### Run
 
-Run the React server on port `5173` with `npm start`. Your instance should now be accessible at [`http://127.0.0.1:5173`](http://127.0.0.1:5173) in any modern web browser.
+Run the React server on port `5173` with `npm start`. Your instance should now be accessible at [`http://localhost:5173`](http://localhost:5173) in any modern web browser.
 
 For production deployments it is recommended that you use a web server like [Nginx](https://nginx.org/) with a reverse proxy to provide TLS encryption.
 
